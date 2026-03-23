@@ -83,9 +83,9 @@ pipeline {
                     echo "Uploading artifact..."
                     echo "Deployment finished."
                     '''
-           }
+               }
+            }
         }
-    }
     post {
         always {
             // Очистка рабочего пространства (опционально)
