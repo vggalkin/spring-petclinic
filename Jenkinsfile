@@ -79,11 +79,11 @@ pipeline {
                 script {
                     echo "🚀 Deploying version ${params.APP_VERSION} to ${params.DEPLOY_ENV}..."
                     sh '''
-                    echo "Connecting to server..."
-                    echo "Uploading artifact..."
-                    echo "Deployment finished."
+                        echo "Connecting to server..."
+                        echo "Uploading artifact..."
+                        echo "Deployment finished."
                     '''
-               }
+                }
             }
         }
     post {
