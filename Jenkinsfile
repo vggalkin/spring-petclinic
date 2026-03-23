@@ -72,24 +72,20 @@ pipeline {
 
         // 4 & 5. Этап Deploy
         stage('🚀 Deploy') {
-            // 6. Условия выполнения (When) - только для ветки main
             when {
-                branch 'main'
+                expression { return params.GIT_BRANCH == 'main' }
             }
             steps {
                 script {
                     echo "🚀 Deploying version ${params.APP_VERSION} to ${params.DEPLOY_ENV}..."
-                    // Имитация деплоя (замените на реальные шаги деплоя)
                     sh '''
-                        echo "Connecting to server..."
-                        echo "Uploading artifact..."
-                        echo "Deployment finished."
+                    echo "Connecting to server..."
+                    echo "Uploading artifact..."
+                    echo "Deployment finished."
                     '''
-                }
-            }
+           }
         }
     }
-
     post {
         always {
             // Очистка рабочего пространства (опционально)
